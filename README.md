@@ -482,6 +482,16 @@ K-Means Clustering is an unsupervised learning algorithm that groups data points
 
 To evaluate clustering quality, the Silhouette Score** measures how well each point fits within its assigned cluster (ranging from 0 to 1, where a higher value indicates better-defined clusters).  
 
+### Silhouette Values Explained
+
+Silhouette values measure how well data points fit within their assigned clusters by comparing their similarity to points in the same cluster versus those in the nearest different cluster.
+
+- **High silhouette value (~1):** The point is well-clustered.  
+- **Near zero (~0):** The point is on the boundary between clusters.  
+- **Low silhouette value (~-1):** The point may be incorrectly clustered.  
+
+Silhouette scores help assess clustering quality, with higher average values indicating well-separated and well-defined clusters.
+
 
 # Results Analysis
 
