@@ -52,10 +52,10 @@ By combining these approaches, we aim to answer our question: How do certain fac
 
 # Productivity Research: Satisfaction & Characteristics
 - Satisfaction:
-   - Productive work environments foster productivity, improve moral, promotes collaboration, and fosters growth  
+   - Productive work environments foster productivity, improve morale, promote collaboration, and fosters growth  
    - Happy and engaged employees are often more productive
    - Slack's latest annual survey (The State of Work 2023) found that more than 8/10 (82%) said feeling happy and engaged during work was key driver of productivity
-   - Microsoft found in the latest work trend index found that lacking clear goals and feeling uninspired were among the top obstacles in the workspace
+   - Microsoft found in the latest work trend index that that lacking clear goals and feeling uninspired were among the top obstacles in the workspace
    - A Univeristy of Oxford's Business School found happy workers to be 13% more productive while the University of Warwick found 12%
    - A Gallup report in 2022 found that 60% of the global population reported feeling emotionally detached at work while 19% claimed to be miserable
 - Characteristics:
@@ -89,7 +89,7 @@ Our data is derived from two separate Kaggle datasets, cleaned and merged into a
 - Gender
 - JobLevel
 - JobRole
-- MartialStatus
+- MaritalStatus
 - MonthlyIncome
 - NumCompaniesWorked
 - Over18
