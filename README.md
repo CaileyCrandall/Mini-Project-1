@@ -322,54 +322,103 @@ Before analysis, data cleaning steps included:
    - Data Standardization: Aligning feature distributions helps maintain stable gradients and faster convergence when training neural networks.
 
 Overall, this pipeline—data cleaning, encoding, scaling, model definition, training, and evaluation—is a well-rounded approach to building a predictive neural network for continuous outcomes like *JobSatisfaction*. It balances simplicity and low computational cost (because of the single hidden layer) with enough flexibility to model non-linearities in the data.
-## Summary of Decision Tree Creation Process  
+## Summary of Decision Tree Creation Process    
 
-## Creation Process  
-1.**Data Collection & Filtering**  
+### 1. Data Collection & Filtering  
 We began with a CSV containing employee-related variables, such as:  
- BusinessTravel  
- DistanceFromHome  
- YearsAtCompany  
- Age  
- JobSatisfaction  
+1. BusinessTravel  
+2. DistanceFromHome  
+3. YearsAtCompany  
+4. Age  
+5. JobSatisfaction  
 
-2. **Encoding Categorical Variables**  
+### 2. Encoding Categorical Variables  
 To handle categorical variables, **LabelEncoder** from the `sklearn.preprocessing` package was used. This function assigned numerical labels to categorical columns, allowing the decision tree to process them as variables.  
 
-3. **Choice of Modeling Approach***  
+### 3. Choice of Modeling Approach  
 
-3.1 Problem Type: 
-We predicted a binary variable, Output, indicating whether an employee will perform in the 75th percentile of project completion.  
-Since this is a classification task, a decision tree model was selected over clustering or regression.  
+#### 3.1 Problem Type  
+1. We predicted a binary variable, **Output**, indicating whether an employee will perform in the 75th percentile of project completion.  
+2. Since this is a classification task, a **decision tree** model was selected over clustering or regression.  
 
-3.2 Decision Tree Structure  
-A simple decision tree diagram was built, utilizing an unsupervised learning approach.  
-The model made predictions on whether an employee would perform in the 75th percentile based on selected independent variables.  
+#### 3.2 Decision Tree Structure  
+1. A simple decision tree diagram was built, utilizing an unsupervised learning approach.  
+2. The model made predictions on whether an employee would perform in the 75th percentile based on selected independent variables.  
 
-3.3 Justification  
-A decision tree is well-suited for predicting a binary target variable when dealing with a mix of categorical and numerical features.  
-The model learns from previous observations and applies that knowledge to new instances, making it a useful tool for understanding patterns in employee performance.  
+#### 3.3 Justification  
+1. A decision tree is well-suited for predicting a **binary target variable** when dealing with a mix of categorical and numerical features.  
+2. The model learns from previous observations and applies that knowledge to new instances, making it a useful tool for understanding patterns in employee performance.  
 
-4. **Training and Evaluation**  
+### 4. Training and Evaluation  
 
-4.1 Evaluation Metrics  
-Loss Function – Root Mean Squared Error (RMSE) was included for reference but was not the primary metric.  
-Confusion Matrix Metrics:  
-   - **Accuracy** =  (0.8)– proportion of all correct predictions.  
+#### 4.1 Evaluation Metrics  
+1. **Loss Function** – Root Mean Squared Error (RMSE) was included for reference but was not the primary metric.  
+2. **Confusion Matrix Metrics:**  
+   - **Accuracy** = (0.8) – proportion of all correct predictions.  
    - **Precision** = (0.75) – model’s ability to avoid false positives.  
    - **Recall** = (0.5) – model’s ability to correctly identify positive instances.  
    - **F1 Score** = (0.6) – balances the tradeoff between precision and recall.  
 
-4.2 Train/Test Split  
-The dataset was split into training and test sets.  
-**90% training data (180 observations)** was used to train the model.  
-**10% test data (20 observations)** was used to evaluate performance.  
+#### 4.2 Train/Test Split  
+1. The dataset was split into training and test sets.  
+2. **90% training data (180 observations)** was used to train the model.  
+3. **10% test data (20 observations)** was used to evaluate performance.  
 
-4.3 Key Takeaways  
-The most critical metric for this task is Recall, as it measures the model's ability to correctly identify employees who will perform in the 75th percentile.  
-However, our model's Recall score is relatively low, suggesting that it still struggles to correctly classify high-performing employees.  
-This indicates that further refinements are needed to improve predictive accuracy.  
+#### 4.3 Key Takeaways  
+1. The most critical metric for this task is **Recall**, as it measures the model's ability to correctly identify employees who will perform in the **75th percentile**.  
+2. However, our model's Recall score is relatively low, suggesting that it still struggles to correctly classify high-performing employees.  
+3. This indicates that further refinements are needed to improve predictive accuracy.  
 
+## Creation Process of Clustering Model
+
+#### 1. Data Collection & Filtering
+- Implemented random sampling to achieve row congruence between datasets
+- Merged 200-row sampled dataset (data_2) with another 200-row dataset (Sample_data_1)
+  - Used artificially created mutual column
+  - Removed duplicate columns
+- Filtered out categorical data as unsuitable for clustering:
+  ```python
+  merged_data = merged_data.select_dtypes(exclude=['object'])
+  ```
+
+#### 2. Handling Missing Data & Outliers
+- Identified 3 null values out of 200 rows
+- Removed rows with null values:
+  ```python
+  merged_data.dropna(inplace=True)
+  ```
+
+## Modeling Approach
+
+### Problem Definition
+- Predicted projects completed based on three quantitative variables:
+  1. Salary
+  2. Satisfaction rate
+  3. Employee years at company
+
+### K-Means Clustering Structure
+- **Model Type**: Unsupervised learning model
+- **Purpose**: Groups observations into predetermined number of clusters
+- **Cluster Determination**: Used elbow method to identify optimal number of clusters
+- **Methodology**: Assigns datapoints to clusters based on distance from centroids
+
+### Model Justification
+- Suitable for integer data with small ranges relative to other numerical data
+- Effective for predicting relationships in mildly sized observation sets
+- Enables prediction through cluster-based grouping of similar datapoints
+
+## Model Evaluation
+
+### Training and Performance Metrics
+- **Evaluation Method**: Silhouette Score
+  - Measures cluster quality through intra-cluster and inter-cluster distances
+  - Score range: -1 to 1
+    - 1: Well-separated, compact clusters
+    - 0: Poorly defined clusters
+    - Negative: Potential misassignment of points
+- **Best Performance**: 0.588 (Salary vs. Projects Completed)
+  - Indicates moderate accuracy
+  - Suggests room for model improvement
 
 # Explaining the math
 ## Neural Network Architecture & Activation Function ##
