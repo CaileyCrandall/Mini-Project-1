@@ -672,7 +672,6 @@ This visualization presents a k-means clustering analysis plotting employee sati
 
  ![image](https://github.com/user-attachments/assets/4a30641b-247f-46fb-b35e-98c1d55327da)
 
-# Satisfaction Rate vs Projects Completed: K-Means Clustering Analysis
 
 ## Overview
 This visualization shows k-means clustering analysis of employee satisfaction rates plotted against the number of projects completed. The data is divided into four distinct clusters, each marked by a red centroid (X), revealing different patterns in employee satisfaction levels.
