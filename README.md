@@ -854,7 +854,6 @@ Silhouette Score: 0.025078394835782555
 
 ## Decision Tree Evaluation
 
-# Model Performance Analysis: Confusion Matrix and Metrics
 
 ![image](https://github.com/user-attachments/assets/f2cec888-481d-4c3f-809a-1f7e885d4dc6)
 
@@ -864,14 +863,14 @@ Precision: 0.75
 Recall: 0.5
 F1 Score: 0.6
 ```
-## Confusion Matrix Breakdown
+### Confusion Matrix 
 - True Negatives (TN): 13 cases
 - False Positives (FP): 1 case
 - False Negatives (FN): 3 cases
 - True Positives (TP): 3 cases
 - Total Predictions: 20 cases
 
-## Performance Metrics
+### Performance Metrics
 - **Accuracy**: 0.80 (80%)
   - Model correctly predicts 16 out of 20 cases
   - Shows good overall performance
@@ -893,12 +892,12 @@ F1 Score: 0.6
 2. Strong precision (75%) indicates reliable positive predictions
 3. Good at identifying negative cases (13 out of 14 correct)
 
-## Areas for Improvement
+### Areas for Improvement
 1. Lower recall (50%) suggests model misses half of positive cases
 2. False negatives (3) indicate potential missed opportunities
 3. F1 score (60%) suggests room for better balance between precision and recall
 
-## What to do next time
+### What to do next time
 1. Consider rebalancing model to improve recall if missing positive cases is costly
 2. Investigate patterns in false negatives to understand missed positive cases
 3. Evaluate if current performance metrics align with business requirements
