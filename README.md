@@ -49,6 +49,11 @@ By combining these approaches, we aim to answer our question: How do certain fac
 - Can we predict if an employee is going to be a top performer?  
 - How accurately can you predict a top performer?  
 
+## Assumptions  ##
+- Everyone has a baseline level of satisfaction 
+- All employees have ability to travel
+- Youngest employee is 18
+- No outside factors affecting work 
 
 # Productivity Research: Satisfaction & Characteristics
 - Satisfaction:
