@@ -785,7 +785,7 @@ This decision tree provides a framework for understanding the factors that contr
 
 ## Neural Network Evaluation
 
-Here are the results after running the training script of the neural network. The model decided that 39 epochs was sufficient. At the bottom of the text, the MSE for testing and training is listed. We can see that the testing MSE is ~0.4 more than the training MSE. 
+Here are the results after running the training script of the neural network. The model decided that 39 epochs was sufficient. At the bottom of the text, the MSE for testing and training is listed. We can see that the testing MSE is ~0.04 more than the training MSE. 
 ```
 Training Monitor Log:
 Epoch 1: ✓ New best model!
